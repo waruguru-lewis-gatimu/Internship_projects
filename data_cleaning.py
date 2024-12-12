@@ -32,10 +32,11 @@ df
 # Stanadardizing the column name to a more neater look.
 # Split the 'Name' column into two new columns: 'Surname' and 'OfficialName'
 df[['Surname','OfficialName',]] = df['Name'].str.split(',',expand=True)
-df=df.drop(columns=['Name','Nickname'])
-
 df
-#
+
+#Dropping the column 'Name'
+df= df.drop(columns=['Name'])
+df
 
 #Checking the sum of null values in each column
 df.isnull().sum()
